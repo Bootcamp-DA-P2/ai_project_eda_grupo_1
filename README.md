@@ -53,35 +53,48 @@ El objetivo es transformar datos crudos en información significativa: limpiar, 
 ## 🔍 Análisis Realizado
 
 ### 1. Carga y exploración inicial
-- Inspección de tipos de dato con `dtypes` y `info()`
-- Identificación de columnas numéricas, categóricas y temporales
-- Conversión de `date` a `datetime` y variables numéricas a `Int64`
+- Inspección de tipos de dato con `dtypes` e `info()`
+- El dataset contiene **420 registros** y **17 columnas**
+- Identificación de columnas numéricas cargadas erróneamente como `float64`
+- La columna `states` se identificó como categórica discreta (número de estados que reportaron ese día, no un estado geográfico)
 
-### 2. Limpieza de datos
-- Detección y tratamiento de valores nulos con `isnull()` y `fillna(0)`
-- Identificación de filas duplicadas con `duplicated()`
-- Verificación de fechas repetidas
+### 2. Limpieza y preprocesado
+- Conversión de `date` de `object` a `datetime64[ns]`
+- Normalización forzada de columnas numéricas a `Int64` mediante bucle con `pd.to_numeric(errors='coerce')`
+- Tratamiento de valores nulos con `fillna(0)` — se asume que ausencia de dato equivale a cero casos ese día
+- Verificación de duplicados: **0 filas duplicadas** y **0 fechas repetidas**
 
 ### 3. Estadística descriptiva
 - `describe()` para resumen estadístico general
-- Análisis de asimetría (`skew`) y curtosis (`kurt`) por variable
+- Análisis de asimetría (`skew`) y curtosis (`kurt`) por variable:
+  - `positiveIncrease`: skew positivo → cola larga hacia valores altos
+  - `negativeIncrease`: skew negativo → cola hacia la izquierda
+  - `deathIncrease`: curtosis alta (leptocúrtica) → días con picos extremos
+  - `hospitalizedCurrently`: curtosis negativa (platicúrtica) → distribución plana
 
 ### 4. Detección de outliers
-- Visualización con boxplots (Seaborn)
-- Método IQR (rango intercuartílico) para límites superior e inferior
-- Identificación de días atípicos en `positiveIncrease` y `deathIncrease`
+- Visualización con boxplots individuales y panel 2×2 (Seaborn)
+- Método IQR para `positiveIncrease`: **40 días atípicos**, pico máximo el **08-01-2021** con 295.121 casos
+- Método IQR para `deathIncrease`: **28 días atípicos**, pico máximo el **12-02-2021** con 5.427 muertes
 
 ### 5. Visualizaciones
 - Histogramas con KDE para distribución de variables clave
-- Gráficos de línea para evolución temporal
-- Scatter plots para relaciones entre variables
-- Boxplots y violin plots
-- Heatmap de correlaciones (Pearson)
+- Gráficos de línea para evolución temporal de muertes y contagios
+- Scatter plots: `positiveIncrease` vs `death`
+- Violin plot de `inIcuCurrently`
+- Heatmap de correlaciones (Pearson) entre métricas clave
+- Creación de columna `month` para agrupación temporal mensual
 
 ### 6. Análisis de correlaciones
-- Correlación de Pearson y Spearman entre `positiveIncrease` y `deathIncrease`
-- Heatmap de correlaciones entre métricas COVID
-- Análisis de lag temporal (desfase de ~14 días entre casos y muertes)
+- **Pearson r = 0.715** entre `positiveIncrease` y `deathIncrease` (p-valor ≈ 0, estadísticamente muy significativo)
+- **Spearman ρ = 0.716** — confirma relación monótona sólida
+- Correlación casi perfecta (0.99) entre `hospitalizedCurrently` e `inIcuCurrently`
+- Correlación (0.97) entre `inIcuCurrently` y `onVentilatorCurrently`
+
+### 7. Tasas epidemiológicas
+- **Tasa de letalidad global: 1,79%** (515.151 muertes / 28.756.489 casos)
+- **Tasa de supervivencia global: 98,21%**
+- Evolución temporal de la tasa de supervivencia: caída inicial en 2020, recuperación y estabilización por encima del 98% hacia 2021
 
 ---
 
