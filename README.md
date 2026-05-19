@@ -1,4 +1,4 @@
-# ai_projecto_eda_grupo_1
+# ai_project_eda_grupo_1
 Proyecto de Análisis Exploratorio de Datos (EDA) centrado en la limpieza, procesamiento y visualización de datos para extraer insights relevantes y facilitar la toma de decisiones basada en datos.
 
 # 🦠 Análisis Exploratorio de Datos — COVID-19 en EE.UU.
@@ -100,8 +100,8 @@ El objetivo es transformar datos crudos en información significativa: limpiar, 
 
 1. Clona el repositorio:
 ```bash
-git clone https://github.com/tu-usuario/eda-covid19.git
-cd eda-covid19
+git clone https://github.com/tu-usuario/eda-covid19.git](https://github.com/Bootcamp-DA-P2/ai_project_eda_grupo_1.git
+cd ai_project_eda_grupo_1.git
 ```
 
 2. Instala las dependencias:
