@@ -17,10 +17,12 @@ El objetivo es transformar datos crudos en información significativa: limpiar, 
 
 ## 📁 Estructura del Repositorio
 
-
-
-
-
+```
+📦 ia_project_eda_grupo1
+ ┣ 📓 EDA-exploration-data-analyst.ipynb        # Notebook principal con el análisis completo
+ ┣ 📄 .gitignore
+ ┗ 📄 README.md
+```
 ---
 
 ## 🗂️ Dataset
@@ -100,7 +102,7 @@ El objetivo es transformar datos crudos en información significativa: limpiar, 
 
 1. Clona el repositorio:
 ```bash
-git clone https://github.com/tu-usuario/eda-covid19.git](https://github.com/Bootcamp-DA-P2/ai_project_eda_grupo_1.git
+git clone https://github.com/tu-usuario/eda-covid19.git
 cd ai_project_eda_grupo_1.git
 ```
 
@@ -111,16 +113,18 @@ pip install pandas matplotlib seaborn bokeh scipy requests
 
 3. Descarga el dataset:
 ```bash
-# Opción A: descarga manual desde
+# Descarga manual desde
 # https://covidtracking.com/data/download/national-history.csv
-
-# Opción B: desde el notebook con requests
 ```
 
-4. Abre el notebook:
+4. Abre el notebook en Google Colab:
 ```bash
-jupyter notebook eda_covid19.ipynb
-# o en Google Colab: sube el archivo y ejecútalo celda a celda
+- Ve a Google Colab
+- Selecciona Archivo → Abrir notebook → GitHub
+- Busca el repositorio y abre EDA-exploration-data-analyst.ipynb
+- Sube el archivo national-history.csv al entorno de Colab
+- Ejecuta las celdas en orden
+
 ```
 
 ---
@@ -137,7 +141,9 @@ jupyter notebook eda_covid19.ipynb
 
 ## 👥 Equipo
 
-> Proyecto desarrollado como parte del módulo de Análisis de Datos.
+> Ana Paula Montiel
+> Noelia Sánchez
+> Romina Navea 
 
 ---
 
