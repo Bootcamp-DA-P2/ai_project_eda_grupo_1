@@ -1,7 +1,4 @@
-# ai_project_eda_grupo_1
-Proyecto de Análisis Exploratorio de Datos (EDA) centrado en la limpieza, procesamiento y visualización de datos para extraer insights relevantes y facilitar la toma de decisiones basada en datos.
-
-# 🦠 Análisis Exploratorio de Datos — COVID-19 en EE.UU.
+# Análisis Exploratorio de Datos — COVID-19 en EE.UU.
 
 > Proyecto de EDA realizado sobre datos históricos de la pandemia de COVID-19 en Estados Unidos, con el objetivo de presentar conclusiones limpias y accionables al equipo directivo.
 
@@ -85,6 +82,8 @@ El objetivo es transformar datos crudos en información significativa: limpiar, 
 - Heatmap de correlaciones (Pearson) entre métricas clave
 - Creación de columna `month` para agrupación temporal mensual
 
+![Gráfico EDA](assets/grafico1.png)
+
 ### 6. Análisis de correlaciones
 - **Pearson r = 0.715** entre `positiveIncrease` y `deathIncrease` (p-valor ≈ 0, estadísticamente muy significativo)
 - **Spearman ρ = 0.716** — confirma relación monótona sólida
@@ -98,7 +97,27 @@ El objetivo es transformar datos crudos en información significativa: limpiar, 
 
 ---
 
-## 🛠️ Tecnologías
+
+## 🛠️ Tecnologías Utilizadas
+
+<p align="center">
+
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+
+<img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white">
+
+<img src="https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/SciPy-8CAAE6?style=for-the-badge&logo=scipy&logoColor=white">
+
+<img src="https://img.shields.io/badge/Bokeh-E84D60?style=for-the-badge&logo=bokeh&logoColor=white">
+
+<img src="https://img.shields.io/badge/Requests-20232A?style=for-the-badge">
+
+</p>
+
 
 | Librería | Uso |
 |---|---|
