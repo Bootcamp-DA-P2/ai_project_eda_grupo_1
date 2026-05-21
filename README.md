@@ -154,8 +154,8 @@ pip install pandas matplotlib seaborn bokeh scipy requests
 
 ## 👥 Equipo
 
-> Ana Paula Montiel
-> Noelia Sánchez
+> Ana Paula Montiel,
+> Noelia Sánchez,
 > Romina Navea 
 
 ---
