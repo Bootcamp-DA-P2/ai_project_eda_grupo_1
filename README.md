@@ -179,6 +179,12 @@ pip install pandas matplotlib seaborn bokeh scipy requests
 
 ---
 
+## Presentación
+
+Link -- https://canva.link/019by8tbzu9eihb
+
+---
+
 ## 📄 Licencia
 
 Los datos utilizados están bajo licencia [CC BY 4.0](https://covidtracking.com/license) del COVID Tracking Project / The Atlantic.
